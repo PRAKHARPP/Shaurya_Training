@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div style="background-color:red;" class="col-md-4 bg-suceess p-5 hide1">
+                <h4 class="text-center">Box1</h4>
+            </div>
+            <div style="background-color:yellowgreen; display: none;" class="col-md-4 p-5 show">
+                <h4 class="text-center">Box2</h4>
+            </div>
+            <div style="background-color:green ;" class="col-md-4 p-5 hide2">
+                <h4 class="text-center">Box3</h4>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="text-center p-5">
+                <button id="button" style="background-color: lightseagreen;">Execute</button>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script>
+
+    $(document).ready(function () {
+        $("#button").click(function () {
+
+            $(".hide1").fadeOut(5000);
+            $(".hide2").fadeOut(5000);
+            $(".show").fadeIn(3000);
+        })
+    })
+</script>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <button id="ser1" class="p-3 btn-danger" onclick="Server1()">Server 1</button>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <button id="ser2" class="p-3 btn-success"onclick="Server2()">Server 2</button>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <button id="ser3" class="p-3 btn-info" onclick="Server3()">Server 3</button>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <!-- <button id="result">Result :-</button> -->
+            <h5 id="result"></h5>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <button id="check" class="p-3 text-white" style="background-color:chocolate;" onclick="Display()">Check</button>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    var ser1 = false;
+    var ser2 = false;
+    var ser3 = false;
+
+    function Server1()
+    {
+        ser1=true;
+    }
+    function Server2()
+    {
+        ser2=true;
+    }
+    function Server3()
+    {
+        ser3=true;
+    }
+
+    function Display() {
+        let prom1 = new Promise((Resolve, Reject) => {
+            if (ser1 === true) {
+                Resolve("Resolved");
+            }
+            else {
+                Reject("Server 1");
+            }
+        })
+
+        let prom2 = new Promise((Resolve, Reject) => {
+            if (ser2 === true) {
+                Resolve("Resolved");
+            }
+            else {
+                Reject("Server 2");
+            }
+        })
+        let prom3 = new Promise((Resolve, Reject) => {
+            if (ser3 === true) {
+                Resolve("Resolved");
+            }
+            else {
+                Reject("Server 3");
+            }
+        })
+
+        Promise.all([prom1, prom2, prom3]).then((data) => {
+                document.getElementById("result").innerHTML = "Result :-" + "All Server is Running";
+            }).catch(error => {
+                document.getElementById("result").innerHTML = "Result :-" + "Server Failed Due to "+error;
+            })
+
+    }
+
+</script>
