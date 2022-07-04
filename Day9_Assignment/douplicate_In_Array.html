@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body style="text-align: center;">
+    <div>
+        <h3>Enter the Element</h3>
+        <input id="element" type="text">
+    </div>
+    <button onclick="SaveElement()" class="mt-3">Save</button>
+    <button onclick="Show()">show</button>
+    <button onclick="FindDuplicate()">Find</button>
+   <div id="show"></div>
+    <div>
+        <!-- <h4 id="duplicate">Result :-</h4> -->
+        <label id="duplicate" class="mt-3">Result :-</label>
+    </div>
+</body>
+
+</html>
+<script>
+
+    var arrElement = new Array();
+    var arrDuplicate = new Array();
+   
+    function SaveElement()
+    {
+        var userInput = (document.getElementById("element").value); 
+        arrElement[arrElement.length] = userInput;
+    }
+    function Show()
+    {
+        var content=" Data Entered by User :<br>";
+     content+= [arrElement]+",";
+        document.getElementById("show").innerHTML = content;
+    }
+
+    function FindDuplicate()
+    {
+        let k=0;
+
+        for(let i=0;i<arrElement.length-1;i++)
+        {
+            for(let j=i+1;j<arrElement.length;j++)
+            {
+                if(arrElement[i]===arrElement[j])
+                {
+                    arrDuplicate[k]=arrElement[i];
+                    k++;
+                }
+            }
+        }
+
+        let Resu = arrDuplicate.map(item=>{
+          return item;
+        })
+        document.getElementById("duplicate").innerHTML = "Duplicate Value :-"+Resu;
+    }
+
+   
+
+   
+
+</script>
