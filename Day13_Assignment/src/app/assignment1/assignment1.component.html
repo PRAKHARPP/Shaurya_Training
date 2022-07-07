@@ -1,0 +1,28 @@
+<!-- <h2 >Assignment 1</h2> -->
+<div class="Container">
+    <div class="row mt-3">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <h3>Contact Form</h3>
+            <div class="form-group mt-3">
+                <h4><label>First Name</label></h4>
+                <input type="text" #firstName class="form-control " placeholder="Enter Full Name "/>
+            </div>
+            <div class="form-group mt-3">
+                <h4><label>Last Name</label></h4>
+                <input type="text" #lastName class="form-control " placeholder="Enter Last Name "/>
+            </div>
+            <div>
+                <p >First Name Length :-{{fNameLenght}}</p>
+                <p >Last Name Length :-{{lNameLenght}}</p>
+               
+            </div>
+
+            <div>
+                <button class="btn-success" (click)="onSubmit(firstName,lastName)">Submit</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
