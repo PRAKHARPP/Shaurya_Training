@@ -1,0 +1,26 @@
+
+<div class="Container">
+    <div class="row">
+        <div class="col-5"></div>
+        <div class="col-5 form-group">
+            <div>
+                <h3> Enter Value</h3>
+                <input type="text" placeholder="Enter Value" class="form-control" [(ngModel)]="data"/>
+             </div>
+     
+             <div [ngSwitch]="data" class="mt-3">
+                 <h5 *ngSwitchCase="100"> One Hundred</h5>
+                 <h5 *ngSwitchCase="101"> One Hundred and One</h5>
+                 <h5 *ngSwitchCase="102"> One Hundred and Two</h5>
+                 <h5 *ngSwitchCase="103"> One Hundred and Three</h5>
+                 <h5 *ngSwitchCase="104"> One Hundred and Four</h5>
+                 <h5 *ngSwitchCase="105"> One Hundred and Five</h5>
+                 <p *ngSwitchDefault>Please Enter Value between 100 to 105</p>
+     
+             </div>
+            </div>
+          
+
+    </div>
+
+</div>
