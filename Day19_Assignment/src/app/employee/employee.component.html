@@ -1,0 +1,11 @@
+
+<div class="form-group m-3">
+    <!-- <h3>Input Box</h3>
+   <p> <input type="text" class="form-control"  #NameInput></p> -->
+    <h4>Parent Component :- {{Name}}</h4>
+    <button class="btn btn-danger m-3" (click)="ngOnDestroy()" >Destroy Child</button>
+</div>
+
+<div>
+    <app-emp-detail *ngIf="ChildShow" ></app-emp-detail>
+</div>
