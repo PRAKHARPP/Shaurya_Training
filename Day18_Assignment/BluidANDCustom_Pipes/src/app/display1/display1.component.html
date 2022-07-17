@@ -1,0 +1,31 @@
+   <div class="container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div>
+                <h3 class="text-danger">Real Text :- {{TextMsg}}</h3>
+                <h4>Lower Case :- {{TextMsg | lowercase}}</h4>
+                <h4>Upper Case :- {{TextMsg | uppercase}}</h4>
+                <h4>Title Case :- {{TextMsg | titlecase}}</h4>
+            </div>
+            
+            <div class=" mt-5">
+                <h3 class="text-danger">Training Fees :-{{TrainingFees}}</h3>
+                <h4>Training Fees Rupees :- {{TrainingFees | currency:'INR'}}</h4>
+                <h4>Training Fees Dollar:- {{TrainingFees | currency:'USD'}}</h4>
+                <h4>Training Fees Euro :- {{TrainingFees | currency:'EUR'}}</h4>
+            </div>
+        
+            <div class="mt-5">
+               <h3 class="text-danger">Date :- {{TodayDate}}</h3>
+               <h4>Date in DD-MM-YYYY :- {{TodayDate | date:'dd-MM-yyyy'}}</h4>
+               <h4>Date in DD-MMM-YYYY :- {{TodayDate | date:'dd-MMM-yyyy'}}</h4>
+            </div>
+
+        </div>
+
+    </div>
+
+   </div>
+
+

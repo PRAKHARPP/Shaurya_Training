@@ -1,0 +1,15 @@
+
+<h2 class="text-center">Pipes Using ngfor</h2>
+<div >
+    <table class="table table-striped ">
+        <th>User ID</th>
+        <th>User Name</th>
+        <th>Status</th>
+        <tr *ngFor="let user of arrUser" >
+        <td>{{user.userID}}</td>
+        <td>{{user.userName}}</td>
+        <td [ngClass]="{'text-success':user.status==='A','text-danger':user.status==='D','text-warning':user.status!='A' && 'D'}">{{user.status | userStatus}}</td>
+        </tr>
+    
+    </table>
+</div>
