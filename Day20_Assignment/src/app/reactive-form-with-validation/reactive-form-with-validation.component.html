@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-5">
+            <div>
+                <div>
+                    <h3>Reactive form With Varidation</h3>
+                </div>
+
+                <form [formGroup]="fromClient" (ngSubmit)="onSubmit(fromClient.value)" class="mt-3">
+                    <div class="from-gruop">
+                        <label>Client ID</label>
+                        <input type="text" class="form-control" formControlName="ClientId" />
+                        <span class="alert-danger" *ngIf="fromClient.controls['ClientId'].hasError('required')">Please Enter Client Id </span>
+                        <span class="alert-danger" *ngIf="fromClient.controls['ClientId'].hasError('minlength')">Client Id Requried 6 digit</span>
+                    </div>
+
+                    <div class="from-gruop mt-2">
+                        <label>Client Name</label>
+                        <input type="text" class="form-control" formControlName="ClientName" />
+                        <span class="alert-danger" *ngIf="fromClient.controls['ClientName'].hasError('required')">Please Enter Client Name</span>
+                        <span class="alert-danger" *ngIf="fromClient.controls['ClientName'].hasError('minlength')">Client Id Requried More than 3 digit</span>
+                        <span class="alert-danger" *ngIf="fromClient.controls['ClientName'].hasError('maxlength')">Client Id Requried Less than 20 digit</span>
+                    </div>
+
+                    <div class="from-gruop mt-2">
+                        <label>Address</label>
+                        <input type="text" class="form-control" formControlName="Address" />
+                        <span class="alert-danger" *ngIf="fromClient.controls['Address'].hasError('required')">Please Enter Address </span>
+                        
+                    </div>
+
+                    <div class="from-gruop mt-2">
+                        <label>Phone No</label>
+                        <input type="text" class="form-control" formControlName="PhoneNo" />
+                        <span class="alert-danger" *ngIf="fromClient.controls['PhoneNo'].hasError('pattern')">Please Enter Digit Only</span>
+                        <span class="alert-danger" *ngIf="fromClient.controls['PhoneNo'].hasError('required')">Please Enter Phone Number </span>
+                        <span class="alert-danger" *ngIf="fromClient.controls['PhoneNo'].hasError('minlength')">Requried 10 digit</span>
+                        <span class="alert-danger" *ngIf="fromClient.controls['PhoneNo'].hasError('maxlength')">Requried 10 digit</span>
+                    </div>
+
+                    <div class="from-gruop">
+                        <button class="btn btn-success mt-3" type="submit">Submit</button>
+                        <button class="btn btn-danger mt-3 ml-3" type="reset">Reset</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
