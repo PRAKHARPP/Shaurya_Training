@@ -1,0 +1,27 @@
+<h5 class="ml-5">Product List</h5>
+<div class="row">
+    <div class="col-6">
+        <table class="table table-striped">
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Product Size</th>
+            <th>Product Status</th>
+            <th>Delete</th>
+
+            <tr *ngFor="let product of ProductData; let indexOfelement=index;">
+                <td>{{product.productid}}</td>
+                <td>{{product.productname}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.size}}</td>
+                <td>{{product.status}}</td>
+                <td><button class="btn btn-danger" (click)="onDelete(indexOfelement)">Delete</button></td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="col">
+        <app-productform (EventProductUpdate)="onProductUpdate($event)"></app-productform>
+    </div>
+
+</div>
