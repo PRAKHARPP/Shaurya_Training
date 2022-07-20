@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-6">
+            <form [formGroup]="frmUser" (ngSubmit)="onSubmit()">
+                <h3>User Role Assign</h3>
+                <div class="form-group">
+                    <h5>User Name</h5>
+                    <input type="text" formControlName="name" class="form-control"/>
+                </div>
+            
+                <div class="form-group">
+                   <h5>Role Assign</h5>
+                   <div formArrayName="Roles">
+                    <div *ngFor="let role of Roles.controls; let i=index">
+                        <div [formGroupName]="i">
+                            <div class="row">
+                                <div class="col-6 mt-2">
+                                    <input type="text" formControlName="role" class="form-control"/>
+                                </div>
+                                <div class="col-6">
+                                    <button (click)="removeRole(i)" class="btn btn-danger">Remove</button>
+                                </div>
+            
+                            </div>
+            
+                        </div>
+            
+                    </div>
+            
+                   </div>
+                </div>
+                <div class="mt-2">
+                    <button (click)="addRoles()" class="btn btn-primary">Add Role</button>
+                    <button type="submit" class="btn btn-success ml-2">Submit</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

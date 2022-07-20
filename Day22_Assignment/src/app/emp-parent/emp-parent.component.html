@@ -1,0 +1,72 @@
+<!-- <div class="container">
+    <div class="row">
+         <div class="col-1"></div>
+        <div class="col-1"> 
+        <div>
+            <h3>Employee Data</h3>
+            <div>
+                <table class="table m-3">
+                    <thead>
+                        <th> Employee Id</th>
+                        <th> Employee Name</th>
+                        <th> Salary</th>
+                        <th> Detail</th>
+                    </thead>
+                    <tbody *ngFor="let emp of empData">
+                        <tr>
+                            <td>{{emp.eId}}</td>
+                            <td>{{emp.eName}}</td>
+                            <td>{{emp.salary}}</td>
+                            <td><button class="btn btn-info" (click)="onSelect(emp.eId)">Select</button></td>
+                        </tr>
+                      <div class="col-12">
+                        <div class="col" *ngIf="selectEmpId === emp.eId">
+                            <app-empchild [propEmpChild]="emp"></app-empchild>
+                        </div>
+
+                      </div>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div> 
+
+    </div>
+
+</div> -->
+<div class="text-center text-success">
+    <h3>Employee Detail</h3>
+</div>
+<div class="container mt-2">
+    <div class="row">
+        
+        <div class="col-6">
+            <table class="table table-striped">
+                <th> Employee Id</th>
+                <th> Employee Name</th>
+                <th> Salary</th>
+                <th> Detail</th>         
+                <tr *ngFor="let emp of empData">
+                    <td>{{emp.eId}}</td>
+                    <td>{{emp.eName}}</td>
+                    <td>{{emp.salary}}</td>
+                    <td><button class="btn btn-info" (click)="onSelect(emp)" >Select</button></td>                
+                </tr>    
+            </table>    
+        </div>
+        <div class="col-6">
+            <table class="table table-striped">
+                <th> Employee Id</th>
+                <th> Employee Name</th>
+                <th> Salary</th>       
+                <tr *ngFor="let emp of empData2">
+                    <td>{{emp.eId}}</td>
+                    <td>{{emp.eName}}</td>
+                    <td>{{emp.salary}}</td>
+                </tr>    
+            </table>    
+        </div>
+    </div>
+
+</div>
